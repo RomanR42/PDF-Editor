@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pdf editor</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <h1 class="main-title">PDF Editor</h1>
+  <div class="main-panel">
+
+    <img class="logo" src="./img/logo.png" alt="logo">
+
+    <div class="button" title="Add or Remove page">
+      <p class="material-icons button-icon">post_add</p>
+      <p class="button-title">Page</p>
+    </div>
+    <div class="button" title="Edit text" id="editText">
+      <p class="material-icons button-icon">text_fields</p>
+      <p class="button-title">Text</p>
+    </div>
+    <div class="button" title="Erase">
+      <p class="material-icons button-icon">auto_fix_high</p>
+      <p class="button-title">Erase</p>
+    </div>
+    <div class="button" title="Highlighting">
+      <p class="material-icons button-icon">highlight</p>
+      <p class="button-title">Highlight</p>
+    </div>
+    <div class="button-dropdown" title="Inserting elements on a page">
+      <span>Paste</span><span class="material-icons">arrow_drop_down</span>
+      <div class="dropdown-menu">
+        <p class="dropdown-menu__item"><span>Sign</span><span class="material-icons">assignment_turned_in</span></p>
+        <p class="dropdown-menu__item"><span>Date</span><span class="material-icons">today</span></p>
+        <p class="dropdown-menu__item"><span>Cross</span><span class="material-icons">clear</span></p>
+        <p class="dropdown-menu__item"><span>Check</span><span class="material-icons">check_circle</span></p>
+        <p class="dropdown-menu__item"><span>Image</span><span class="material-icons">image</span></p>
+        <p class="dropdown-menu__item"><span>Text block</span><span class="material-icons">article</span></p>
+        <p class="dropdown-menu__item"><span>Watermark</span><span class="material-icons">branding_watermark</span></p>
+      </div>
+    </div>
+    <div class="button" title="Line drawing">
+      <p><img src="./img/line.svg" alt="line"></p>
+      <p class="button-title">Line</p>
+    </div>
+    <div class="button" title="Arrow drawing">
+      <p class="material-icons button-icon">north_east</p>
+      <p class="button-title">Arrow</p>
+    </div>
+    <div class="button" title="Rectangle drawing">
+      <p class="material-icons button-icon">crop_square</p>
+      <p class="button-title">Rectangle</p>
+    </div>
+    <div class="button" title="Circle drawing">
+      <p class="material-icons button-icon">radio_button_unchecked</p>
+      <p class="button-title">Circle</p>
+    </div>
+    <div class="divider"></div>
+    <div class="button" title="Add comment">
+      <p class="material-icons button-icon">insert_comment</p>
+      <p class="button-title">Comment</p>
+    </div>
+    <div class="button" title="Search" id="search">
+      <p class="material-icons button-icon">manage_search</p>
+      <p class="button-title">Search</p>
+    </div>
+    <div class="button" title="Change zoom">
+      <p class="material-icons button-icon">zoom_in</p>
+      <p class="button-title">Zoom</p>
+    </div>
+    <div class="button" title="Help">
+      <p class="material-icons button-icon">help</p>
+      <p class="button-title">Help</p>
+    </div>
+  </div>
+
+  <div class="sub-panel">
+    <div class="edit-panel">
+        <p class="material-icons button-sub" title="Hide navigation" id="hideNav">content_paste_off</p>
+        <p class="material-icons button-sub" title="Show navigation" id="showNav">content_paste</p>
+        <p class="material-icons button-sub" title="Save">save</p>
+        <p class="material-icons button-sub" title="Undo">undo</p>
+        <p class="material-icons button-sub" title="Redo">redo</p>
+        <div class="divider-dark"></div>
+    </div>
+    <div class="text-panel">
+        <select class="select" name="font">
+          <option value="null" selected disabled>Font</option>
+          <option value="arial">Arial</option>
+          <option value="times">Times New Roman</option>
+          <option value="roboto">Roboto</option>
+          <option value="sans">Sans</option>
+        </select>
+        <select class="select" name="font">
+          <option value="null" selected disabled>Font-size</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="20">20</option>
+          <option value="22">22</option>
+          <option value="24">24</option>
+        </select>
+        <label class="label-color" for="idcolor">Select text color</label>
+        <input class="input-color" type="color" value="#ff0000" name="setcolor" id="idcolor">
+        <p class="bold-icon">B</p>
+        <p class="italc-icon">I</p>
+        <p class="underline-icon">U</p>
+        <p class="material-icons text-format">format_align_left</p>
+        <p class="material-icons text-format">format_align_justify</p>
+        <p class="material-icons text-format">format_align_center</p>
+        <p class="material-icons text-format">format_align_right</p>
+    </div>
+    <div class="search-panel">
+        <input type="text" name="search" class="input-search" placeholder="search">
+        <button class="btn-search">Search</button>
+    </div>
+
+  </div>
+
+  <div class="main">
+    <aside class="aside-panel">
+      <div class="paginator">
+        <span class="material-icons paginator-icon">navigate_before</span>
+        <span class="paginator-number">Page 1 of 2</span>
+        <span class="material-icons paginator-icon">navigate_next</span>
+      </div>
+      <div class="nav-content">
+        <div class="fake-page-preview">1</div>
+        <div class="fake-page-preview">2</div>
+      </div>
+
+    </aside>
+    <div class="editor">
+      <div class="fake-page"> 
+        <h2>PDF Page1</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, et. Minus minima harum voluptatum et porro veritatis eius nostrum suscipit at reprehenderit. Modi laborum aperiam incidunt asperiores, voluptatem quibusdam repudiandae?
+          Voluptas voluptatum nam voluptate culpa natus ullam at expedita rem ratione aut quam numquam architecto similique sequi, debitis deserunt eligendi consectetur animi sed, facilis saepe fugiat id. Voluptatibus, soluta eos.
+          Libero, voluptates! Temporibus autem esse unde voluptates tempora odio assumenda, eum molestias id mollitia sunt, recusandae suscipit nesciunt aliquam ipsa? Voluptates doloremque culpa voluptatum? Cum accusamus voluptatum porro ipsa tenetur!
+          Exercitationem iure debitis vitae similique dignissimos ea eaque, veritatis, commodi fugit temporibus error, numquam esse maiores sunt unde illum doloremque dolore placeat porro nesciunt deleniti dolorum quisquam? Dignissimos, repellendus necessitatibus!
+          Nulla, iure perferendis officia facilis doloremque in eligendi nemo. Voluptate quidem maiores illo unde tempora, architecto aspernatur soluta veritatis molestias, corporis sapiente placeat aut explicabo mollitia sit, velit facere expedita!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, et. Minus minima harum voluptatum et porro veritatis eius nostrum suscipit at reprehenderit. Modi laborum aperiam incidunt asperiores, voluptatem quibusdam repudiandae?
+          Voluptas voluptatum nam voluptate culpa natus ullam at expedita rem ratione aut quam numquam architecto similique sequi, debitis deserunt eligendi consectetur animi sed, facilis saepe fugiat id. Voluptatibus, soluta eos.
+          Libero, voluptates! Temporibus autem esse unde voluptates tempora odio assumenda, eum molestias id mollitia sunt, recusandae suscipit nesciunt aliquam ipsa? Voluptates doloremque culpa voluptatum? Cum accusamus voluptatum porro ipsa tenetur!
+          Exercitationem iure debitis vitae similique dignissimos ea eaque, veritatis, commodi fugit temporibus error, numquam esse maiores sunt unde illum doloremque dolore placeat porro nesciunt deleniti dolorum quisquam? Dignissimos, repellendus necessitatibus!
+          Nulla, iure perferendis officia facilis doloremque in eligendi nemo. Voluptate quidem maiores illo unde tempora, architecto aspernatur soluta veritatis molestias, corporis sapiente placeat aut explicabo mollitia sit, velit facere expedita!
+        </p>
+      </div>
+      <div class="fake-page"> 
+        <h2>PDF Page2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, et. Minus minima harum voluptatum et porro veritatis eius nostrum suscipit at reprehenderit. Modi laborum aperiam incidunt asperiores, voluptatem quibusdam repudiandae?
+          Voluptas voluptatum nam voluptate culpa natus ullam at expedita rem ratione aut quam numquam architecto similique sequi, debitis deserunt eligendi consectetur animi sed, facilis saepe fugiat id. Voluptatibus, soluta eos.
+          Libero, voluptates! Temporibus autem esse unde voluptates tempora odio assumenda, eum molestias id mollitia sunt, recusandae suscipit nesciunt aliquam ipsa? Voluptates doloremque culpa voluptatum? Cum accusamus voluptatum porro ipsa tenetur!
+          Exercitationem iure debitis vitae similique dignissimos ea eaque, veritatis, commodi fugit temporibus error, numquam esse maiores sunt unde illum doloremque dolore placeat porro nesciunt deleniti dolorum quisquam? Dignissimos, repellendus necessitatibus!
+          Nulla, iure perferendis officia facilis doloremque in eligendi nemo. Voluptate quidem maiores illo unde tempora, architecto aspernatur soluta veritatis molestias, corporis sapiente placeat aut explicabo mollitia sit, velit facere expedita!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, et. Minus minima harum voluptatum et porro veritatis eius nostrum suscipit at reprehenderit. Modi laborum aperiam incidunt asperiores, voluptatem quibusdam repudiandae?
+          Voluptas voluptatum nam voluptate culpa natus ullam at expedita rem ratione aut quam numquam architecto similique sequi, debitis deserunt eligendi consectetur animi sed, facilis saepe fugiat id. Voluptatibus, soluta eos.
+          Libero, voluptates! Temporibus autem esse unde voluptates tempora odio assumenda, eum molestias id mollitia sunt, recusandae suscipit nesciunt aliquam ipsa? Voluptates doloremque culpa voluptatum? Cum accusamus voluptatum porro ipsa tenetur!
+          Exercitationem iure debitis vitae similique dignissimos ea eaque, veritatis, commodi fugit temporibus error, numquam esse maiores sunt unde illum doloremque dolore placeat porro nesciunt deleniti dolorum quisquam? Dignissimos, repellendus necessitatibus!
+          Nulla, iure perferendis officia facilis doloremque in eligendi nemo. Voluptate quidem maiores illo unde tempora, architecto aspernatur soluta veritatis molestias, corporis sapiente placeat aut explicabo mollitia sit, velit facere expedita!
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer__contacts">
+        <div class="footer__contacts-address">
+            <p>Aspose Pty Ltd, Suite 163, 79 Longueville Road,</p>
+            <p>Lane Cove, NSW, 2066, Australia.</p>
+            <p class="footer__contacts-phone">
+                <img src="./img/call.svg" alt="phone">
+                 <a href="tel:+61280066987" class="footer__contacts-phone-link">+61 2 8006 6987</a>
+            </p>
+        </div>
+        <div class="footer__contacts-social">
+            <a href="https://www.facebook.com/" target="_blank"><img src="./img/logos-facebook.png" alt="fb"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="./img/logos-instagram.png" alt="insta"></a>
+            <a href="https://www.pinterest.ru/" target="_blank"><img src="./img/logos-pinterest.png" alt="pint"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="./img/logos-youtube.png" alt="youtube"></a>
+        </div>
+
+    </div>
+    <p class="footer__copyright">© Aspose Pty Ltd 2001-2021. All Rights Reserved</p>
+  </footer>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
